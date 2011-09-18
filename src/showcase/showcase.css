@@ -27,6 +27,7 @@
     padding: 0;
     z-index: 50;
     overflow: hidden;
+    display: none;
 }
 
 .jquery-showcase-header {
@@ -79,6 +80,7 @@
     position: relative;
     overflow: hidden;
     height: 63px;
+    cursor: pointer;
 }
 
 .jquery-showcase-thumbnail img {
@@ -86,5 +88,16 @@
     top: 0;
     left: 0;
     z-index: 170;
+    display: none;
+}
+
+.jquery-showcase-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    width: 118px;
+    height: 63px;
+    background: url(./thumbnail-overlay.gif) 0 0 no-repeat;
     display: none;
 }

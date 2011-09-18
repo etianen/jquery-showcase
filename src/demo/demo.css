@@ -26,6 +26,10 @@ header h1 {
     margin: 0;
 }
 
+section {
+    display: block;
+}
+
 article {
     display: block;
     padding: 18px 10px 18px 10px;

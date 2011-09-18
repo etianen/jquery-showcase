@@ -70,9 +70,9 @@
      * The showcase plugin.
      */
     $.fn.showcase = function(options) {
-        // Configure plugin.
+        // Configure the plugin.
         var settings = {
-            slideSelector: "> li",
+            slideSelector: "ul > li",
             headerSelector: "> article > hgroup",
             titleSelector: "> article > hgroup > h1",
             subTitleSelector: "> article > hgroup > h2",
@@ -85,12 +85,19 @@
         }
         // Run the plugin.
         return this.each(function() {
+            var isPlaying = settings.autoPlay;
             // Find and activate the showcase.
             var showcase = $(this).addClass("jquery-showcase").show();
             var thumbnails = $("<div/>", {
                 "class": "jquery-showcase-thumbnails"
             });
             showcase.append(thumbnails);
+            // Add in the overlay.
+            var overlay = $("<div/>", {
+                "class": "jquery-showcase-overlay"
+            });
+            thumbnails.append(overlay);
+            overlay.fadeIn();
             // Configure each slide.
             var slides = showcase.find(settings.slideSelector);
             slides.each(function(n) {
@@ -125,9 +132,45 @@
                 }
                 scaleImages();
                 $(window).resize(scaleImages);
+                // Create the show and hide events.
+                slide.bind("show.showcase", function() {
+                    // Show this slide.
+                    slide.css("z-index", 25).fadeIn(function() {
+                        // Continue with the autoplay.
+                        if (isPlaying) {
+                            setTimeout(function() {
+                                // We have to check we're still playing, just in case it's changed during the delay.
+                                if (isPlaying) { 
+                                    // Get the next slide.
+                                    var nextSlide = slide.next("li");
+                                    if (nextSlide.length == 0) {
+                                        nextSlide = slides.eq(0);
+                                    }
+                                    // Show the next slide.
+                                    nextSlide.trigger("show.showcase");
+                                }
+                            }, settings.duration);
+                        }
+                    });
+                    // Move the overlay.
+                    overlay.animate({
+                        top: thumbnail.position().top
+                    });
+                    // Hide the other slides.
+                    slides.not(slide).trigger("hide.showcase");
+                });
+                slide.bind("hide.showcase", function() {
+                    slide.css("z-index", 25).fadeOut();
+                });
+                // Make the thumbnail clickable.
+                thumbnail.click(function() {
+                    // Disable autoplay.
+                    isPlaying = false;
+                    slide.trigger("show.showcase");
+                });
             });
             // Only show the first slide.
-            slides.slice(1).hide();
+            slides.eq(0).trigger("show.showcase");
         });
     }
 
