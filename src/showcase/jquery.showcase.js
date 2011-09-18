@@ -125,13 +125,11 @@
                 preload(thumbnailImage, n * 200, function() {
                     thumbnailImage.fadeIn();
                 });
-                // Set the image scaling callbacks.
-                function scaleImages() {
+                // Set the image scaling event.
+                slide.bind("scale.showcase", function() {
                     fitToContainer(slide, image);
                     fitToContainer(thumbnail, thumbnailImage);
-                }
-                scaleImages();
-                $(window).resize(scaleImages);
+                });
                 // Create the show and hide events.
                 slide.bind("show.showcase", function() {
                     // Show this slide.
@@ -171,6 +169,13 @@
             });
             // Only show the first slide.
             slides.eq(0).trigger("show.showcase");
+            // Set the showcase height.
+            showcase.height(thumbnails.height());
+            // Set the scaling callbacks.
+            slides.trigger("scale.showcase");
+            $(window).resize(function() {
+                slides.trigger("scale.showcase");
+            });
         });
     }
 
