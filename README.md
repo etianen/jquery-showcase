@@ -7,9 +7,9 @@ A snazzy little showcase widget, built using jQuery.
 Getting started
 ---------------
 
-Download the code, and copy the `src/showcase` folder into your web root.
+Download the plugin, and copy the `src/showcase` folder into your web root.
 
-Add the following code to the `&lt;head&gt;` of your document:
+Add the following code to the `<head>` of your document:
 
 ```html
 <link rel="stylesheet" href="showcase/showcase.css">
@@ -72,7 +72,7 @@ What if I want to use XHTML?
 
 Then you're behind the times! Don't worry, there's still an alternative embed code you can use.
 
-```python
+```html
 <div id="showcase" style="display: none">
     <ul>
         <li>
@@ -122,7 +122,7 @@ Configuration options
 
 You can control the behaviour of the plugin with the following options.
 
-*   **autoPlay:** If true, then the slides will start playing when the page have loaded (default `true`).
+*   **autoPlay:** If true, then the slides will start playing when the page has loaded (default `true`).
 *   **duration:** The time to spend on each slide before changing to the next (default `5000`).
 
 You can control how the plugin interprets the markup of the embed code using the following options.
