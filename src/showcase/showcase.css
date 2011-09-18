@@ -13,6 +13,7 @@
     padding: 0;
     overflow: hidden;
     height: 252px;
+    background: black;
 }
 
 .jquery-showcase-slide {
@@ -21,10 +22,9 @@
     top: 0;
     left: 0;
     bottom: 0;
-    right: 70px;
+    right: 110px;
     margin: 0;
     padding: 0;
-    background: black;
     z-index: 50;
     overflow: hidden;
 }
@@ -59,6 +59,7 @@
     top: 0;
     left: 0;
     z-index: 75;
+    display: none;
 }
 
 .jquery-showcase-thumbnails,
@@ -85,4 +86,5 @@
     top: 0;
     left: 0;
     z-index: 170;
+    display: none;
 }
