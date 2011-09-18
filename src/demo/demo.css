@@ -1,0 +1,46 @@
+/*
+    Styles used to render the showcase demo page.
+    
+    Developed by Dave Hall.
+    
+    <http://www.etianen.com/>
+*/
+
+body  {
+    color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: block;
+    background: #ccc;
+    padding: 18px 10px 18px 10px;
+}
+
+header h1 {
+    font-size: 27px;
+    line-height: 36px;
+    font-weight: normal;
+    margin: 0;
+}
+
+article {
+    display: block;
+    padding: 18px 10px 18px 10px;
+}
+
+article h1 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 18px 0;
+}
+
+footer {
+    padding: 18px 10px 18px 10px;
+}
+
+footer p {
+    font-size: 12px;
+}

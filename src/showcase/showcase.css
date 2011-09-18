@@ -1,0 +1,88 @@
+/*
+    Styles used to render the showcase plugin.
+    
+    Developed by Dave Hall.
+    
+    <http://www.etianen.com/>
+*/
+
+.jquery-showcase {
+    display: block;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    height: 252px;
+}
+
+.jquery-showcase-slide {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 70px;
+    margin: 0;
+    padding: 0;
+    background: black;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.jquery-showcase-header {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: white;
+    padding: 9px 20px 18px 10px;
+    z-index: 100;
+}
+
+.jquery-showcase-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 27px;
+    font-weight: normal;
+    margin: 0 0 0 0;
+}
+
+.jquery-showcase-subtitle {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.jquery-showcase-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 75;
+}
+
+.jquery-showcase-thumbnails,
+.jquery-showcase-thumbnail {
+    width: 110px;
+}
+
+.jquery-showcase-thumbnails {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 150;
+}
+
+.jquery-showcase-thumbnail {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 63px;
+}
+
+.jquery-showcase-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 170;
+}

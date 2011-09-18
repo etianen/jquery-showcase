@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    
+        <title>jQuery Showcase</title>
+        
+        <!-- Styles used to render this demo page. Not needed for the showcase itself. -->
+        <link rel="stylesheet" href="demo/demo.css">
+        
+        <!-- Styles needed for the showcase. -->
+        <link rel="stylesheet" href="showcase/showcase.css">
+        
+        <!-- The showcase needs jQuery. This is a hosted version from Google, or you can host your own. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        
+        <!-- The actual showcase jQuery plugin. -->
+        <script src="showcase/jquery.showcase.js"></script>
+    
+    </head>
+    
+    <body>
+    
+        <header>
+            <h1>jQuery Showcase</h1>
+        </header>
+        
+        <article>
+            
+            <h1>Showcase demo</h1>
+            
+            <!--
+                This is the markup required to embed a showcase.
+                
+                The id is not required for styling, and is only present to target the
+                jQuery plugin. The markup is HTML5-style. If you want to embed it
+                in an XHTML page, you can either just change your DOCTYPE (harmless),
+                or alter the markup and change your plugin configuration slightly.
+                
+                Please see the doc comments for the plugin for information on
+                available plugin settings.
+            -->
+            <ul id="showcase">
+                <li>
+                    <article>
+                        <hgroup>
+                            <h1>News</h1>
+                            <h2>SPICE Project announced</h2>
+                        </hgroup>
+                        <img src="demo/slide1.jpg" width=640 height=400 alt="Slide 1">
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <hgroup>
+                            <h1>News</h1>
+                            <h2>PEPPER Project announced</h2>
+                        </hgroup>
+                        <img src="demo/slide2.jpg" width=640 height=400 alt="Slide 2">
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <hgroup>
+                            <h1>News</h1>
+                            <h2>OATMEAL Project announced</h2>
+                        </hgroup>
+                        <img src="demo/slide3.jpg" width=640 height=400 alt="Slide 3">
+                    </article>
+                </li>
+                <li>
+                    <article>
+                        <hgroup>
+                            <h1>News</h1>
+                            <h2>CHILLI Project announced</h2>
+                        </hgroup>
+                        <img src="demo/slide4.jpg" width=640 height=480 alt="Slide 4">
+                    </article>
+                </li>
+            </ul>
+            
+            <!--
+                This bit of javascript activates the carousel. You can place this in
+                a separate file to call on DomReady if you prefer, or keep it
+                immediately after the carousel markup for the best loading performance.
+            -->
+            <script>
+                $("#showcase").showcase();
+            </script>
+            
+        </article>
+        
+        <footer>
+            <p>Developed by <a href="http://www.etianen.com/">Dave Hall </a></p>
+        </footer>
+    
+    </body>
+
+</html>
