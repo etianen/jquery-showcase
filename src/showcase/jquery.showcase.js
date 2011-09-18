@@ -127,6 +127,10 @@
                 });
                 // Set the image scaling event.
                 slide.bind("scale.showcase", function() {
+                    // Scale the slide. (Could do this in CSS, but IE6 borks).
+                    slide.height(thumbnails.height());
+                    slide.width(showcase.width() - thumbnails.width());
+                    // Scale the images.
                     fitToContainer(slide, image);
                     fitToContainer(thumbnail, thumbnailImage);
                 });
