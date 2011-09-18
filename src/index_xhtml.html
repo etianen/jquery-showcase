@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+    <head>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+        <title>jQuery Showcase</title>
+        
+        <!-- Styles used to render this demo page. Not needed for the showcase itself. -->
+        <link rel="stylesheet" href="demo/demo.css"/>
+        
+        <!-- Styles needed for the showcase. -->
+        <link rel="stylesheet" href="showcase/showcase.css"/>
+        
+        <!-- The showcase needs jQuery. This is a hosted version from Google, or you can host your own. -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        
+        <!-- The actual showcase jQuery plugin. -->
+        <script type="text/javascript" src="showcase/jquery.showcase.js"></script>
+    
+    </head>
+    
+    <body>
+    
+        <div id="header">
+            <h1>jQuery Showcase</h1>
+        </div>
+        
+        <div id="article">
+            
+            <h2>Showcase demo</h2>
+            
+            <!--
+                This is the markup required to embed a showcase.
+                
+                The id is not required for styling, and is only present to target the
+                jQuery plugin.
+            -->
+            <div id="showcase" style="display: none">
+                <ul>
+                    <li>
+                        <div>
+                            <div class="title">News</div>
+                            <div class="subtitle">Slide 1 title goes here</div>
+                        </div>
+                        <img src="demo/slide1.jpg" width="640" height="400" alt="Slide 1"/>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="title">News</div>
+                            <div class="subtitle">Slide 1 title goes here</div>
+                        </div>
+                        <img src="demo/slide2.jpg" width="640" height="400" alt="Slide 2"/>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="title">News</div>
+                            <div class="subtitle">Slide 1 title goes here</div>
+                        </div>
+                        <img src="demo/slide3.jpg" width="640" height="400" alt="Slide 3"/>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="title">News</div>
+                            <div class="subtitle">Slide 1 title goes here</div>
+                        </div>
+                        <img src="demo/slide4.jpg" width="640" height="480" alt="Slide 4"/>
+                    </li>
+                </ul>
+            </div>
+            
+            <!--
+                This bit of javascript activates the carousel. You can place this in
+                a separate file to call on DomReady if you prefer, or keep it
+                immediately after the carousel markup for the best loading performance.
+            -->
+            <script type="text/javascript">
+                $("#showcase").showcase({
+                    headerSelector: "> div",
+                    titleSelector: "> div > div.title",
+                    subtitleSelector: "> div > div.subtitle",
+                    imageSelector: "> img"
+                });
+            </script>
+            
+        </div>
+        
+        <div id="footer">
+            <p>Developed by <a href="http://www.etianen.com/">Dave Hall </a></p>
+        </div>
+    
+    </body>
+
+</html>
