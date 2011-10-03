@@ -87,7 +87,7 @@
         return this.each(function() {
             var isPlaying = settings.autoPlay;
             // Find and activate the showcase.
-            var showcase = $(this).addClass("jquery-showcase").show();
+            var showcase = $(this).addClass("jquery-showcase").removeClass("jquery-showcase-fallback").show();
             var thumbnails = $("<div/>", {
                 "class": "jquery-showcase-thumbnails"
             });
